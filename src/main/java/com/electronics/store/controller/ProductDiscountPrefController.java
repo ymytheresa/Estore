@@ -37,4 +37,9 @@ public class ProductDiscountPrefController {
     public void deleteProductDiscountPref(@PathVariable Integer productDiscountPrefId) {
         productDiscountPrefService.deleteProductDiscountPref(productDiscountPrefId);
     }
+
+    @GetMapping("/productId/{productId}")
+    public List<ProductDiscountPref> getProductDiscountPrefsByProductId(@PathVariable Integer productId){
+        return productDiscountPrefService.findByProductId(productId);
+    }
 }
